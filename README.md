@@ -8,6 +8,11 @@
 飞书自定义机器人使用说明:
 [如何在群组中使用机器人？](https://www.feishu.cn/hc/zh-CN/articles/360024984973)
 
+## 加群
+
+- 通过二维码: [./qrcode.png](./qrcode.png)
+- 通过链接: [Jest 机器人测试群](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=63budeba-35e8-4668-a4cb-1a8bb1266316)
+
 ## 安装
 
 ```sh
