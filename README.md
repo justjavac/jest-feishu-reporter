@@ -81,6 +81,28 @@ webhook 地址，格式如下：
 
 飞书有 3 种安全模式，如果使用**签名校验**，则需要设置 `secret`。
 
+## 注意事项
+
+对于公有仓库，还可以通过设置系统环境变量来进行配置。
+
+- `JEST_FEISHU_TOKEN` - 设置 token
+- `JEST_FEISHU_SECRET` - 设置 secret
+
+使用：
+
+```shell
+JEST_FEISHU_TOKEN=xxxx-xxxx-xxx npm run test
+```
+
+Github Actions 配置：
+
+```yml
+- name: Test
+  env:
+    JEST_FEISHU_TOKEN: ${{ secrets.FEISHU_TOKEN }}
+  run: yarn test
+```
+
 ## License
 
 [jest-feishu-reporter](https://github.com/justjavac/jest-feishu-reporter) is

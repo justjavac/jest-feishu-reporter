@@ -17,4 +17,4 @@ jobs:
       - name: Test
         env:
           JEST_FEISHU_TOKEN: ${{ secrets.FEISHU_TOKEN }}
-        run: yarn test || exit 0
+        run: yarn test
