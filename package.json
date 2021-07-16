@@ -1,6 +1,6 @@
 {
   "name": "jest-feishu-reporter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "将 Jest 的测试错误发送到飞书",
   "scripts": {
     "fmt": "deno fmt ./src",
@@ -24,8 +24,7 @@
   "bugs": "https://github.com/justjavac/jest-feishu-reporter/issues",
   "author": "justjavac <justjavac@gmail.com> (https://justjavac.com)",
   "files": [
-    "dist/index.js",
-    "dist/index.d.ts"
+    "dist/*"
   ],
   "dependencies": {
     "node-fetch": "^2.6.1",
