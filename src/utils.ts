@@ -2,6 +2,7 @@ import { relative } from "path";
 import { TestResult } from "@jest/test-result";
 import fetch from "node-fetch";
 import stripAnsi from "strip-ansi";
+import crypto from 'crypto'
 
 export interface Options {
   token?: string;
@@ -49,9 +50,20 @@ export function urlEncode(str: string) {
   });
 }
 
-export async function send(token: string, elements: ElementTag[]) {
+export async function send(token: string, secret: string | undefined, elements: ElementTag[]) {
+
+  const singPayload: Record<string, string> = {};
+  if (secret !== undefined) {
+    const timestamp = Date.now();
+    const hash = crypto.createHmac('sha256', '')
+    hash.update(`${timestamp}\n${secret}`)
+    const sign = hash.digest('base64');
+    singPayload.timestamp = String(timestamp);
+    singPayload.sign = sign;
+  }
+
   const data = {
-    // deno-lint-ignore camelcase
+    ...singPayload,
     msg_type: "interactive",
     card: {
       header: {

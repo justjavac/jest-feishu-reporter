@@ -25,7 +25,7 @@ class LarkReporter {
       .filter((x) => x.numFailingTests !== 0)
       .map(createElement);
 
-    await send(this.options.token, [
+    await send(this.options.token, this.options.secret, [
       {
         tag: "div",
         text: {
